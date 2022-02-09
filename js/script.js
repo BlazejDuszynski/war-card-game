@@ -1,19 +1,88 @@
 const talia = [
-    "2 pik", "2 trefl", "2 karo", "2 kier",
-    "3 pik", "3 trefl", "3 karo", "3 kier",
-    "4 pik", "4 trefl", "4 karo", "4 kier",
-    "5 pik", "5 trefl", "5 karo", "5 kier",
-    "6 pik", "6 trefl", "6 karo", "6 kier",
-    "7 pik", "7 trefl", "7 karo", "7 kier",
-    "8 pik", "8 trefl", "8 karo", "8 kier",
-    "9 pik", "9 trefl", "9 karo", "9 kier",
-    "10 pik", "10 trefl", "10 karo", "10 kier",
-    "Jopek pik", "Jopek trefl", "Jopek karo", "Jopek kier",
-    "Dama pik", "Dama trefl", "Dama karo", "Dama kier",
-    "Król pik", "Król trefl", "Król karo", "Król kier",
-    "As pik", "As trefl", "As karo", "As kier",
-    "Joker1", "Joker2"
+    { name: "2 pik", power: 1 },
+    { name: "2 trefl", power: 1 },
+    { name: "2 karo", power: 1 },
+    { name: "2 kier", power: 1 },
+
+    { name: "3 pik", power: 2 },
+    { name: "3 trefl", power: 2 },
+    { name: "3 karo", power: 2 },
+    { name: "3 kier", power: 2 },
+
+    { name: "4 pik", power: 4 },
+    { name: "4 trefl", power: 4 },
+    { name: "4 karo", power: 4 },
+    { name: "4 kier", power: 4 },
+
+    { name: "5 pik", power: 5 },
+    { name: "5 trefl", power: 5 },
+    { name: "5 karo", power: 5 },
+    { name: "5 kier", power: 5 },
+
+    { name: "6 pik", power: 6 },
+    { name: "6 trefl", power: 6 },
+    { name: "6 karo", power: 6 },
+    { name: "6 kier", power: 6 },
+
+    { name: "7 pik", power: 7 },
+    { name: "7 trefl", power: 7 },
+    { name: "7 karo", power: 7 },
+    { name: "7 kier", power: 7 },
+
+    { name: "8 pik", power: 8 },
+    { name: "8 trefl", power: 8 },
+    { name: "8 karo", power: 8 },
+    { name: "8 kier", power: 8 },
+
+    { name: "9 pik", power: 9 },
+    { name: "9 trefl", power: 9 },
+    { name: "9 karo", power: 9 },
+    { name: "9 kier", power: 9 },
+
+    { name: "10 pik", power: 10 },
+    { name: "10 trefl", power: 10 },
+    { name: "10 karo", power: 10 },
+    { name: "10 kier", power: 10 },
+
+    { name: "Jopek pik", power: 11 },
+    { name: "Jopek trefl", power: 11 },
+    { name: "Jopek karo", power: 11 },
+    { name: "Joper kier", power: 11 },
+
+    { name: "Dama pik", power: 12 },
+    { name: "Dama trefl", power: 12 },
+    { name: "Dama karo", power: 12 },
+    { name: "Dama kier", power: 12 },
+
+    { name: "Król pik", power: 13 },
+    { name: "Król trefl", power: 13 },
+    { name: "Król karo", power: 13 },
+    { name: "Król kier", power: 13 },
+
+    { name: "As pik", power: 14 },
+    { name: "As trefl", power: 14 },
+    { name: "As karo", power: 14 },
+    { name: "As kier", power: 14 },
+
+    { name: "Joker1", power: 15 },
+    { name: "Joker2", power: 15 },
+
 ];
+
+//     "2 pik","2 trefl", "2 karo", "2 kier",
+//     "3 pik", "3 trefl", "3 karo", "3 kier",
+//     "4 pik", "4 trefl", "4 karo", "4 kier",
+//     "5 pik", "5 trefl", "5 karo", "5 kier",
+//     "6 pik", "6 trefl", "6 karo", "6 kier",
+//     "7 pik", "7 trefl", "7 karo", "7 kier",
+//     "8 pik", "8 trefl", "8 karo", "8 kier",
+//     "9 pik", "9 trefl", "9 karo", "9 kier",
+//     "10 pik", "10 trefl", "10 karo", "10 kier",
+//     "Jopek pik", "Jopek trefl", "Jopek karo", "Jopek kier",
+//     "Dama pik", "Dama trefl", "Dama karo", "Dama kier",
+//     "Król pik", "Król trefl", "Król karo", "Król kier",
+//     "As pik", "As trefl", "As karo", "As kier",
+//     "Joker1", "Joker2"
 
 const numberOfCards = talia.length / 2;
 
@@ -44,26 +113,33 @@ let cardsDistribution = () => {
 
 }
 
+let whoWins = (nextMove) => {
+
+}
+
 let nextMove = () => {
     let nextMovePlayer1 = () => {
-        i = 0
-        boardPlayer1.innerHTML = player1[i];
-        i++;
+        i = 0;
+        let movePlayer1 = player1[i].name;
+        boardPlayer1.innerHTML = movePlayer1;
+        player1.splice(i, 1);
     }
     nextMovePlayer1();
 
     let nextMovePlayer2 = () => {
-        i = 0
-        boardPlayer2.innerHTML = player2[i];
-        i++;
+        z = 0;
+        let movePlayer2 = player1[z].name;
+        boardPlayer2.innerHTML = movePlayer2;
+        player2.splice(i, 1);
     }
     nextMovePlayer2();
-}
+};
 
 let render = () => {
 
     cardsDistribution();
-    nextMove();
+    let button = document.querySelector("button");
+    button.onclick = nextMove;
 
 };
 
