@@ -64,8 +64,8 @@ const talia = [
     { name: "As karo", power: 14 },
     { name: "As kier", power: 14 },
 
-    { name: "Joker1", power: 15 },
-    { name: "Joker2", power: 15 },
+    { name: "Joker", power: 15 },
+    { name: "Joker", power: 15 },
 
 ];
 
@@ -88,8 +88,20 @@ const numberOfCards = talia.length / 2;
 
 let player1 = [];
 let player2 = [];
+let player1WonCards = [];
+let player2WonCards = [];
 let boardPlayer1 = document.querySelector(".boardPlayer1");
 let boardPlayer2 = document.querySelector(".boardPlayer2");
+let message = document.querySelector(".message");
+let numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
+let numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
+
+let renderNumberOfCards = () => {
+    numberOfCardsPlayer1.innerHTML = player1.length + player1WonCards.length;
+    numberOfCardsPlayer2.innerHTML = player2.length + player2WonCards.length;
+};
+
+window.onload = renderNumberOfCards;
 
 
 let cardsDistribution = () => {
@@ -100,7 +112,6 @@ let cardsDistribution = () => {
         player1.push(talia[randomKardIDplayer1]);
         talia.splice(randomKardIDplayer1, 1);
     }
-    console.log(player1);
 
     for (z = 0; z < numberOfCards; z++) {
         //losowe id z talii
@@ -109,30 +120,40 @@ let cardsDistribution = () => {
         talia.splice(randomKardIDplayer2, 1);
     }
 
-    console.log(player2);
-
-}
-
-let whoWins = (nextMove) => {
-
-}
+};
 
 let nextMove = () => {
-    let nextMovePlayer1 = () => {
-        i = 0;
-        let movePlayer1 = player1[i].name;
-        boardPlayer1.innerHTML = movePlayer1;
-        player1.splice(i, 1);
-    }
-    nextMovePlayer1();
+    //let nextMovePlayer1 = () => {
+    i = 0;
+    if (player1.length === 0) {
 
-    let nextMovePlayer2 = () => {
-        z = 0;
-        let movePlayer2 = player1[z].name;
-        boardPlayer2.innerHTML = movePlayer2;
-        player2.splice(i, 1);
     }
-    nextMovePlayer2();
+    let movePlayer1 = player1[i].name;
+    boardPlayer1.innerHTML = movePlayer1;
+    z = 0;
+    let movePlayer2 = player2[z].name;
+    boardPlayer2.innerHTML = movePlayer2;
+    //}
+    //nextMovePlayer1();
+    if (player1[i].power > player2[z].power) {
+        player1WonCards.push(player1[i]);
+        player1WonCards.push(player2[z]);
+        message.innerHTML = "Gracz 1 wygrywa bitwę!"
+    } else if (player1[i].power < player2[z].power) {
+        player2WonCards.push(player1[i]);
+        player2WonCards.push(player2[z]);
+        message.innerHTML = "Gracz 2 wygrywa bitwę!"
+    } else {
+        message.innerHTML = "Dogrywka! <button>Rozstrzygnij bitwę!</button>"
+    }
+
+    //let nextMovePlayer2 = () => {
+
+    player1.splice(i, 1);
+    player2.splice(z, 1);
+    renderNumberOfCards();
+    //}
+    //nextMovePlayer2();
 };
 
 let render = () => {

@@ -25,3 +25,7 @@
     text-align: center;
     margin: auto;
 }
+
+.message {
+    color: rgb(34, 7, 7);
+}
