@@ -69,17 +69,16 @@ const talia = [
 
 ];
 
-const numberOfCards = talia.length / 2;
-
 let player1 = [];
 let player2 = [];
-let player1WonCards = [];
-let player2WonCards = [];
 let boardPlayer1 = document.querySelector(".boardPlayer1");
 let boardPlayer2 = document.querySelector(".boardPlayer2");
 let message = document.querySelector(".message");
 let numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
 let numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
+const nextMoveButton = document.querySelector(".button");
+const numberOfCards = talia.length / 2;
+currentCardIndex = 0;
 
 let renderNumberOfCards = () => {
     numberOfCardsPlayer1.innerHTML = player1.length;
@@ -91,12 +90,14 @@ window.onload = renderNumberOfCards;
 let cardsDistribution = () => {
 
     for (i = 0; i < numberOfCards; i++) {
+        //losowe id z talii
         let randomKardIDplayer1 = Math.floor(Math.random() * talia.length);
         player1.push(talia[randomKardIDplayer1]);
         talia.splice(randomKardIDplayer1, 1);
     }
 
     for (z = 0; z < numberOfCards; z++) {
+        //losowe id z talii
         let randomKardIDplayer2 = Math.floor(Math.random() * talia.length);
         player2.push(talia[randomKardIDplayer2]);
         talia.splice(randomKardIDplayer2, 1);
@@ -104,67 +105,50 @@ let cardsDistribution = () => {
 
 };
 
-let nextMove = () => {
+let isDraw = () => {
+    if (player1[currentCardIndex].power === player2[currentCardIndex].power) {
+        return true;
+    } return false;
+};
 
-    i = 0;
-
-    boardPlayer1.innerHTML = player1[i].name;
-    boardPlayer2.innerHTML = player2[i].name;
-
-    let draw = () => {
-        i = i + 2;
-        boardPlayer1.innerHTML = player1[i].name;
-        boardPlayer2.innerHTML = player2[i].name;
-        let drawButton = document.querySelector("drawButton");
-        drawButton.onclick = draw();
-
-        if (player1[i].power > player2[i].power) {
-            message.innerHTML = "Gracz 1 wygrywa bitwę!";
-            for (var a = 0; a < i + 1; a++) {
-                player1.push(player1[a]);
-                player1.push(player2[a]);
-                player1.splice(a, 1);
-                player2.splice(a, 1);
-            }
-        } else {
-            (player1[i].power < player2[i].power)
-            message.innerHTML = "Gracz 2 wygrywa bitwę!";
-            for (var b = 0; b < i + 1; b++) {
-                player2.push(player1[b]);
-                player2.push(player2[b]);
-                player1.splice(b, 1);
-                player2.splice(b, 1);
-            };
-        };
-    };
-
-    if (player1[i].power > player2[i].power) {
-        player1.push(player1[i]);
-        player1.push(player2[i]);
-        player1.splice(i, 1);
-        player2.splice(i, 1);
-        message.innerHTML = "Gracz 1 wygrywa bitwę!";
-    } else if (player1[i].power < player2[i].power) {
-        player2.push(player1[i]);
-        player2.push(player2[i]);
-        player1.splice(i, 1);
-        player2.splice(i, 1);
-        message.innerHTML = "Gracz 2 wygrywa bitwę!";
+let whoWins = () => {
+    if (player1[currentCardIndex].power > player2[currentCardIndex].power) {
+        message.innerHTML = 'Gracz 1 wygrywa bitwę!';
+        for (var d = 0; d < currentCardIndex + 1; d++) {
+            player1.push(player1[0]);
+            player1.push(player2[0]);
+            player1.splice(0, 1);
+            player2.splice(0, 1);
+        }
+    } else if (player1[currentCardIndex].power < player2[currentCardIndex].power) {
+        message.innerHTML = 'Gracz 2 wygrywa bitwę!';
+        for (var e = 0; e < currentCardIndex + 1; e++) {
+            player2.push(player1[0]);
+            player2.push(player2[0]);
+            player1.splice(0, 1);
+            player2.splice(0, 1);
+        }
     } else {
+        
         message.innerHTML = `
-        Dogrywka! <button class="drawButton">Rozstrzygnij bitwę!</button>
-        `
-    };
+            Dogrywka! <button class="drawButton">Rozstrzygnij bitwę!</button>
+            `
+        currentCardIndex = currentCardIndex + 2;
+        document.querySelector(".drawButton").onclick = nextMove;
+    }
     renderNumberOfCards();
 };
 
-let render = () => {
+let nextMove = () => {
+    boardPlayer1.innerHTML = player1[currentCardIndex].name;
+    boardPlayer2.innerHTML = player2[currentCardIndex].name;
+    whoWins();
+};
 
+let init = () => {
     cardsDistribution();
     const button = document.querySelector("button");
     button.onclick = nextMove;
-    console.log(player1);
-    console.log(player2);
 };
 
-render();
+init();
