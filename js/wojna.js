@@ -78,7 +78,7 @@ let numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
 let numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
 const nextMoveButton = document.querySelector(".button");
 const numberOfCards = talia.length / 2;
-currentCardIndex = 0;
+let currentCardIndex = 0;
 
 let renderNumberOfCards = () => {
     numberOfCardsPlayer1.innerHTML = player1.length;
@@ -103,7 +103,7 @@ let cardsDistribution = () => {
 
 };
 
-let whoWins = (button) => {
+let whoWins = () => {
     if (player1[currentCardIndex].power > player2[currentCardIndex].power) {
         message.innerHTML = 'Gracz 1 wygrywa bitwę!';
         for (var d = 0; d < currentCardIndex + 1; d++) {
@@ -116,6 +116,7 @@ let whoWins = (button) => {
             alert("Gracz 1 wygrywa wojnę!");
             confirm("Czy chcesz zagrać jeszcze raz?");
         }
+        currentCardIndex = 0;
     } else if (player1[currentCardIndex].power < player2[currentCardIndex].power) {
         message.innerHTML = 'Gracz 2 wygrywa bitwę!';
         for (var e = 0; e < currentCardIndex + 1; e++) {
@@ -128,6 +129,7 @@ let whoWins = (button) => {
             alert("Gracz 2 wygrywa wojnę!");
             confirm("Czy chcesz zagrać jeszcze raz?");
         }
+        currentCardIndex = 0;
     } else {
         let button = document.querySelector(".button");
         button.disabled = true;
@@ -144,6 +146,8 @@ let whoWins = (button) => {
 let nextMove = () => {
     boardPlayer1.innerHTML = player1[currentCardIndex].name;
     boardPlayer2.innerHTML = player2[currentCardIndex].name;
+    let button = document.querySelector(".button");
+    button.disabled = false;
     whoWins();
 };
 
