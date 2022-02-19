@@ -103,13 +103,7 @@ let cardsDistribution = () => {
 
 };
 
-let isDraw = () => {
-    if (player1[currentCardIndex].power === player2[currentCardIndex].power) {
-        return true;
-    } return false;
-};
-
-let whoWins = () => {
+let whoWins = (button) => {
     if (player1[currentCardIndex].power > player2[currentCardIndex].power) {
         message.innerHTML = 'Gracz 1 wygrywa bitwę!';
         for (var d = 0; d < currentCardIndex + 1; d++) {
@@ -117,6 +111,10 @@ let whoWins = () => {
             player1.push(player2[0]);
             player1.splice(0, 1);
             player2.splice(0, 1);
+        }
+        if (player2.length === 0) {
+            alert("Gracz 1 wygrywa wojnę!");
+            confirm("Czy chcesz zagrać jeszcze raz?");
         }
     } else if (player1[currentCardIndex].power < player2[currentCardIndex].power) {
         message.innerHTML = 'Gracz 2 wygrywa bitwę!';
@@ -126,9 +124,15 @@ let whoWins = () => {
             player1.splice(0, 1);
             player2.splice(0, 1);
         }
+        if (player1.length === 0) {
+            alert("Gracz 2 wygrywa wojnę!");
+            confirm("Czy chcesz zagrać jeszcze raz?");
+        }
     } else {
-        
-        message.innerHTML = `
+        let button = document.querySelector(".button");
+        button.disabled = true;
+        message.innerHTML =
+            `
             Dogrywka! <button class="drawButton">Rozstrzygnij bitwę!</button>
             `
         currentCardIndex = currentCardIndex + 2;
@@ -145,7 +149,7 @@ let nextMove = () => {
 
 let init = () => {
     cardsDistribution();
-    const button = document.querySelector("button");
+    let button = document.querySelector(".button");
     button.onclick = nextMove;
     renderNumberOfCards();
 };
