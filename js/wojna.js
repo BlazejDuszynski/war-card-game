@@ -85,8 +85,6 @@ let renderNumberOfCards = () => {
     numberOfCardsPlayer2.innerHTML = player2.length;
 };
 
-window.onload = renderNumberOfCards;
-
 let cardsDistribution = () => {
 
     for (i = 0; i < numberOfCards; i++) {
@@ -149,6 +147,7 @@ let init = () => {
     cardsDistribution();
     const button = document.querySelector("button");
     button.onclick = nextMove;
+    renderNumberOfCards();
 };
 
-init();
+window.onload = init;
