@@ -135,7 +135,7 @@ let whoWins = () => {
         button.disabled = true;
         message.innerHTML =
             `
-            Dogrywka! <button class="drawButton">Rozstrzygnij bitwę!</button>
+            <div>Dogrywka!</div><div><button class="drawButton">Rozstrzygnij bitwę!</button></div>
             `
         currentCardIndex = currentCardIndex + 2;
         document.querySelector(".drawButton").onclick = nextMove;
