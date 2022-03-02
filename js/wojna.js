@@ -144,7 +144,7 @@ let whoWins = () => {
 };
 
 let nextMove = () => {
-    boardPlayer1.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>"
+    boardPlayer1.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
     boardPlayer2.innerHTML = "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
     let button = document.querySelector(".button");
     button.disabled = false;
