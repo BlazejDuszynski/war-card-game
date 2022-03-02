@@ -1,5 +1,5 @@
 const talia = [
-    { name: "2 pik", power: 2 },
+    { name: "2 pik", power: 2, },
     { name: "2 trefl", power: 2 },
     { name: "2 karo", power: 2 },
     { name: "2 kier", power: 2 },
@@ -64,8 +64,8 @@ const talia = [
     { name: "As karo", power: 14 },
     { name: "As kier", power: 14 },
 
-    { name: "Joker", power: 15 },
-    { name: "Joker", power: 15 },
+    { name: "Joker 1", power: 15 },
+    { name: "Joker 2", power: 15 },
 
 ];
 
@@ -144,8 +144,8 @@ let whoWins = () => {
 };
 
 let nextMove = () => {
-    boardPlayer1.innerHTML = player1[currentCardIndex].name;
-    boardPlayer2.innerHTML = player2[currentCardIndex].name;
+    boardPlayer1.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>"
+    boardPlayer2.innerHTML = "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
     let button = document.querySelector(".button");
     button.disabled = false;
     whoWins();
