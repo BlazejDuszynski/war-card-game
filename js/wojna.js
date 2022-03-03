@@ -71,8 +71,10 @@ const talia = [
 
 let player1 = [];
 let player2 = [];
-let boardPlayer1 = document.querySelector(".boardPlayer1");
-let boardPlayer2 = document.querySelector(".boardPlayer2");
+let boardPlayer1FirstCard = document.querySelector(".boardPlayer1__firstCard");
+let boardPlayer2FirstCard = document.querySelector(".boardPlayer2__firstCard");
+let boardPlayer1SecondCard = document.querySelector(".boardPlayer1__firstCard");
+let boardPlayer2SecondCard = document.querySelector(".boardPlayer2__firstCard");
 let message = document.querySelector(".message");
 let numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
 let numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
@@ -139,13 +141,15 @@ let whoWins = () => {
             `
         currentCardIndex = currentCardIndex + 2;
         document.querySelector(".drawButton").onclick = nextMove;
+        boardPlayer1SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
+        boardPlayer2SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
     }
     renderNumberOfCards();
 };
 
 let nextMove = () => {
-    boardPlayer1.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
-    boardPlayer2.innerHTML = "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
+    boardPlayer1FirstCard.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
+    boardPlayer2FirstCard.innerHTML = "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
     let button = document.querySelector(".button");
     button.disabled = false;
     whoWins();

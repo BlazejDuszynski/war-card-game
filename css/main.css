@@ -112,3 +112,11 @@
 .relative {
     position: relative;
 }
+
+.boardPlayer1 {
+    position: relative;
+}
+
+.boardPlayer2 {
+    position: relative;
+}
