@@ -140,16 +140,24 @@ let whoWins = () => {
             <div>Dogrywka!</div><div><button class="drawButton">Rozstrzygnij bitwę!</button></div>
             `
         currentCardIndex = currentCardIndex + 2;
-        document.querySelector(".drawButton").onclick = nextMove;
+        document.querySelector(".drawButton").onclick = nextMoveDraw;
         boardPlayer1SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
         boardPlayer2SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
     }
     renderNumberOfCards();
 };
 
-let nextMove = () => {
+let nextMoveDraw = () => {
     boardPlayer1FirstCard.innerHTML += "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
     boardPlayer2FirstCard.innerHTML += "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
+    let button = document.querySelector(".button");
+    button.disabled = false;
+    whoWins();
+}
+
+let nextMove = () => {
+    boardPlayer1FirstCard.innerHTML = "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
+    boardPlayer2FirstCard.innerHTML = "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
     let button = document.querySelector(".button");
     button.disabled = false;
     whoWins();
