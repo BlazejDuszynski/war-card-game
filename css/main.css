@@ -97,14 +97,14 @@
 }
 
 .cardImage {
-    width: 48 px;
-    height: 70px;
+    width: 70px;
+    height: 100px;
     position: absolute;
 }
 
 .backOfCard {
-    width: 48px;
-    height: 70px;
+    width: 70px;
+    height: 100px;
     transform: rotate(90deg);
     position: absolute;
 }

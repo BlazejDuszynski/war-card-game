@@ -141,13 +141,13 @@ let whoWins = () => {
             `
         currentCardIndex = currentCardIndex + 2;
         document.querySelector(".drawButton").onclick = nextMoveDraw;
-        boardPlayer1SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
-        boardPlayer2SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
     }
     renderNumberOfCards();
 };
 
 let nextMoveDraw = () => {
+    boardPlayer1SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
+    boardPlayer2SecondCard.innerHTML += "<img class='backOfCard' src='images/back.png'>";
     boardPlayer1FirstCard.innerHTML += "<img class='cardImage' src='images/" + player1[currentCardIndex].name + ".png'>";
     boardPlayer2FirstCard.innerHTML += "<img class='cardImage' src='images/" + player2[currentCardIndex].name + ".png'>";
     let button = document.querySelector(".button");
