@@ -1,122 +1,132 @@
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Chakra Petch', sans-serif;
+}
+
 .container {
-    width: 80%;
-    max-width: 900px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    background-color: rgb(14, 94, 47);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: rgb(244, 246, 248);
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+  width: 80%;
+  max-width: 900px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  background-color: rgb(14, 94, 47);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(244, 246, 248);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  opacity: 0;
 }
 
 .container__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .player {
-    text-align: center;
-    margin: 100px auto;
-    display: grid;
+  text-align: center;
+  margin: 100px auto;
+  display: grid;
 }
 
 .player__name {
-    text-align: center;
-    margin: 100px auto;
+  text-align: center;
+  margin: 100px auto;
 }
 
 .board {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 .message {
-    color: rgb(34, 7, 7);
+  color: rgb(34, 7, 7);
 }
 
 .messageBox {
-    display: grid;
-    grid-template-columns: repeat(3 1fr);
-    width: 80%;
-    margin: 30px auto;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3 1fr);
+  width: 80%;
+  margin: 30px auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .messageBox__item {
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    padding: 5px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    padding: 10px;
-    box-shadow: none;
-    border: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: rgb(34, 7, 7);
-    color: rgb(244, 246, 248);
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  padding: 5px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  padding: 10px;
+  box-shadow: none;
+  border: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  background-color: rgb(34, 7, 7);
+  color: rgb(244, 246, 248);
 }
 
 .button {
-    width: 100%;
-    background-color: rgb(34, 7, 7);
-    color: rgb(244, 246, 248);
-    border: none;
-    height: 100%;
+  width: 100%;
+  background-color: rgb(34, 7, 7);
+  color: rgb(244, 246, 248);
+  border: none;
+  height: 100%;
 }
 
 .button:hover {
-    background-color: rgb(95, 36, 36);
+  background-color: rgb(95, 36, 36);
 }
 
 .drawButton {
-    background-color: rgb(34, 7, 7);
-    color: rgb(244, 246, 248);
-    border: none;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+  background-color: rgb(34, 7, 7);
+  color: rgb(244, 246, 248);
+  border: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
 }
 
 .drawButton:hover {
-    background-color: rgb(95, 36, 36);
+  background-color: rgb(95, 36, 36);
 }
 
 .button:active {
-    background-color: rgb(156, 77, 77);
+  background-color: rgb(156, 77, 77);
 }
 
 .drawButton:active {
-    background-color: rgb(156, 77, 77);
+  background-color: rgb(156, 77, 77);
 }
 
 .cardImage {
-    width: 70px;
-    height: 100px;
-    position: absolute;
+  width: 70px;
+  height: 100px;
+  position: absolute;
 }
 
 .backOfCard {
-    width: 70px;
-    height: 100px;
-    transform: rotate(90deg);
-    position: absolute;
+  width: 70px;
+  height: 100px;
+  transform: rotate(90deg);
+  position: absolute;
 }
 
 .relative {
-    position: relative;
+  position: relative;
 }
 
 .boardPlayer1 {
-    position: relative;
+  position: relative;
 }
 
 .boardPlayer2 {
-    position: relative;
+  position: relative;
 }

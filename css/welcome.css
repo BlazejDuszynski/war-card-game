@@ -1,0 +1,41 @@
+.welcomeContainer {
+  background-image: url(/images/war-background.jpg);
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  display: block;
+}
+
+.welcomeContainer__popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+  align-items: center;
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.86);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  padding: 30px;
+}
+
+.welcomeContainer__button {
+  width: 80%;
+  cursor: pointer;
+  background-color: rgba(65, 206, 65, 0.86);
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.welcomeContainer__button:hover {
+  background-color: rgba(43, 196, 43, 0.86);
+  transition: all 0.15s ease-in-out;
+}

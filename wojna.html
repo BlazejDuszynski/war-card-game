@@ -1,43 +1,58 @@
 <!DOCTYPE html>
 <html lang="pl">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Wojna</title>
     <script defer src="js/wojna.js"></script>
-    <link href="css/main.css" rel="stylesheet">
-    <link rel="href" href="images/background.jpg">
-</head>
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/welcome.css" rel="stylesheet" />
+    <link rel="href" href="images/background.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital@1&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body class="body">
+  <body class="body">
+    <div class="welcomeContainer">
+      <div class="welcomeContainer__popup">
+        <p>Welcome to War - classy card game!</p>
+        <button class="welcomeContainer__button">Start</button>
+      </div>
+    </div>
     <div class="container">
-        <div class="player container__item">
-            <div class="player__image">Number ofcards: <div class="numberOfCardsPlayer1"></div>
-            </div>
-            <div class="player__name">Gracz 1</div>
-            <div class="player__cards"></div>
+      <div class="player container__item">
+        <div class="player__image">
+          Number ofcards:
+          <div class="numberOfCardsPlayer1"></div>
         </div>
-        <div class="board boardPlayer1 container__item">
-            <div class="boardPlayer1__firstCard"></div>
-            <div class="boardPlayer1__secondCard"></div>
+        <div class="player__name">Gracz 1</div>
+        <div class="player__cards"></div>
+      </div>
+      <div class="board boardPlayer1 container__item">
+        <div class="boardPlayer1__firstCard"></div>
+        <div class="boardPlayer1__secondCard"></div>
+      </div>
+      <div class="board boardPlayer2 container__item">
+        <div class="boardPlayer2__firstCard"></div>
+        <div class="boardPlayer2__secondCard"></div>
+      </div>
+      <div class="player container__item">
+        <div class="player__image">
+          Number of cards:
+          <div class="numberOfCardsPlayer2"></div>
         </div>
-        <div class="board boardPlayer2 container__item">
-            <div class="boardPlayer2__firstCard"></div>
-            <div class="boardPlayer2__secondCard"></div>
-        </div>
-        <div class="player container__item">
-            <div class="player__image">Number of cards: <div class="numberOfCardsPlayer2"></div>
-            </div>
-            <div class="player__name">Gracz 2</div>
-            <div class="player__cards"></div>
-        </div>
+        <div class="player__name">Gracz 2</div>
+        <div class="player__cards"></div>
+      </div>
     </div>
     <div class="messageBox container">
-        <button class="button messageBox__item">Next move!</button>
-        <div class="message messageBox__item"></div>
+      <button class="button messageBox__item">Next move!</button>
+      <div class="message messageBox__item"></div>
     </div>
-</body>
-
+  </body>
 </html>
