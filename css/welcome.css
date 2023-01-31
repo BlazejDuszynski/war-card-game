@@ -37,5 +37,5 @@
 
 .welcomeContainer__button:hover {
   background-color: rgba(43, 196, 43, 0.86);
-  transition: all 0.15s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }

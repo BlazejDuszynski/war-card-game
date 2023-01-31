@@ -68,6 +68,13 @@ const pack = [
   { name: "Joker 2", power: 15 },
 ];
 
+const welcomeWindow = document.querySelector(".welcomeContainer__popup");
+const startButton = document.querySelector(".welcomeContainer__button");
+
+startButton.addEventListener("click", () => {
+  welcomeWindow.style.display = "none";
+});
+
 let player1 = [];
 let player2 = [];
 const boardPlayer1FirstCard = document.querySelector(
