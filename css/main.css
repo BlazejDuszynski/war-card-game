@@ -14,7 +14,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: rgba(14, 94, 47, 0.98);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(244, 246, 248);
@@ -42,8 +41,8 @@
 }
 
 .board {
-  text-align: center;
-  margin: auto;
+  position: relative;
+  flex-basis: 200px;
 }
 
 .message {
@@ -113,32 +112,22 @@
 .cardImage {
   width: 70px;
   height: 100px;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%); */
+  position: absolute;
 }
 
 .backOfCard {
   width: 70px;
   height: 100px;
   transform: rotate(90deg);
+  position: absolute;
 }
 
-.relative {
-  position: relative;
+.boardPlayer1__firstCard {
+  width: 70px;
+  height: 100px;
 }
 
-.board {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.boardPlayer1 {
-  position: relative;
-}
-
-.boardPlayer2 {
-  position: relative;
+.boardPlayer2__firstCard {
+  width: 70px;
+  height: 100px;
 }

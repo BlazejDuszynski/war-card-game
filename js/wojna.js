@@ -74,7 +74,7 @@ const container = document.querySelector(".container");
 
 startButton.addEventListener("click", () => {
   welcomeWindow.style.display = "none";
-  container.style.display = "grid";
+  container.style.display = "flex";
 });
 
 let player1 = [];
