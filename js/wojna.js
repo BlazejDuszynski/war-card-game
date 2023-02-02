@@ -70,9 +70,11 @@ const pack = [
 
 const welcomeWindow = document.querySelector(".welcomeContainer__popup");
 const startButton = document.querySelector(".welcomeContainer__button");
+const container = document.querySelector(".container");
 
 startButton.addEventListener("click", () => {
   welcomeWindow.style.display = "none";
+  container.style.display = "grid";
 });
 
 let player1 = [];

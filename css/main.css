@@ -8,12 +8,11 @@
 }
 
 .container {
-  width: 80%;
   max-width: 900px;
   margin: auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  background-color: rgb(14, 94, 47);
+  background-color: rgba(14, 94, 47, 0.95);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: rgb(244, 246, 248);
   -webkit-border-radius: 50px;
