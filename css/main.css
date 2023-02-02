@@ -14,7 +14,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   background-color: rgba(14, 94, 47, 0.98);
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -48,7 +47,9 @@
 }
 
 .message {
-  color: rgb(34, 7, 7);
+  color: inherit;
+  margin-top: 10px;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .messageBox {
@@ -62,16 +63,11 @@
 
 .messageBox__item {
   text-align: center;
-  padding: 10px;
-  padding: 5px;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
-  padding: 10px;
   box-shadow: none;
   border: none;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  background-color: rgb(34, 7, 7);
   color: rgb(244, 246, 248);
 }
 
@@ -94,38 +90,49 @@
 }
 
 .drawButton {
-  background-color: rgb(34, 7, 7);
-  color: rgb(244, 246, 248);
+  padding: 10px 20px;
+  background-color: white;
+  color: rgb(14, 94, 47);
   border: none;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .drawButton:hover {
-  background-color: rgb(95, 36, 36);
+  background-color: rgb(218, 255, 226);
 }
 
 .drawButton:active {
-  background-color: rgb(156, 77, 77);
+  background-color: rgb(175, 253, 192);
 }
 
 .cardImage {
   width: 70px;
   height: 100px;
-  position: absolute;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%); */
 }
 
 .backOfCard {
   width: 70px;
   height: 100px;
   transform: rotate(90deg);
-  position: absolute;
 }
 
 .relative {
   position: relative;
+}
+
+.board {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .boardPlayer1 {

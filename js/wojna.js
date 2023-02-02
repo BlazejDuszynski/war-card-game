@@ -117,7 +117,7 @@ let cardsDistribution = () => {
 
 let whoWins = () => {
   if (player1[currentCardIndex].power > player2[currentCardIndex].power) {
-    message.innerHTML = "Gracz 1 wygrywa bitwę!";
+    message.innerHTML = "Player 1 wins the battle!";
     for (let d = 0; d < currentCardIndex + 1; d++) {
       player1.push(player1[0]);
       player1.push(player2[0]);
@@ -125,14 +125,14 @@ let whoWins = () => {
       player2.splice(0, 1);
     }
     if (player2.length === 0) {
-      alert("Gracz 1 wygrywa wojnę!");
-      confirm("Czy chcesz zagrać jeszcze raz?");
+      alert("Player 1 wins the war!");
+      confirm("Do you want to play again?");
     }
     currentCardIndex = 0;
   } else if (
     player1[currentCardIndex].power < player2[currentCardIndex].power
   ) {
-    message.innerHTML = "Gracz 2 wygrywa bitwę!";
+    message.innerHTML = "Player 2 wins the battle!";
     for (let e = 0; e < currentCardIndex + 1; e++) {
       player2.push(player1[0]);
       player2.push(player2[0]);
@@ -140,8 +140,8 @@ let whoWins = () => {
       player2.splice(0, 1);
     }
     if (player1.length === 0) {
-      alert("Gracz 2 wygrywa wojnę!");
-      confirm("Czy chcesz zagrać jeszcze raz?");
+      alert("Player 2 wins the battle!");
+      confirm("Do you want to play again?");
     }
     currentCardIndex = 0;
   } else {
