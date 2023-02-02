@@ -8,8 +8,8 @@
 }
 
 .container {
-  max-height: 90vh;
-  width: 90vw;
+  min-height: 60vh;
+  width: 80vw;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -93,7 +93,7 @@
   background-color: white;
   color: rgb(14, 94, 47);
   border: none;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Chakra Petch", sans-serif;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   border-radius: 50px;

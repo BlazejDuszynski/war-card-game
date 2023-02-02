@@ -77,39 +77,43 @@ startButton.addEventListener("click", () => {
   container.style.display = "flex";
 });
 
-let player1 = [];
-let player2 = [];
+const player1 = [];
+const player2 = [];
 const boardPlayer1FirstCard = document.querySelector(
   ".boardPlayer1__firstCard"
 );
 const boardPlayer2FirstCard = document.querySelector(
   ".boardPlayer2__firstCard"
 );
-let boardPlayer1SecondCard = document.querySelector(".boardPlayer1__firstCard");
-let boardPlayer2SecondCard = document.querySelector(".boardPlayer2__firstCard");
-let message = document.querySelector(".message");
-let numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
-let numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
+const boardPlayer1SecondCard = document.querySelector(
+  ".boardPlayer1__firstCard"
+);
+const boardPlayer2SecondCard = document.querySelector(
+  ".boardPlayer2__firstCard"
+);
+const message = document.querySelector(".message");
+const numberOfCardsPlayer1 = document.querySelector(".numberOfCardsPlayer1");
+const numberOfCardsPlayer2 = document.querySelector(".numberOfCardsPlayer2");
 const nextMoveButton = document.querySelector(".button");
 const numberOfCards = pack.length / 2;
 let currentCardIndex = 0;
 
-let renderNumberOfCards = () => {
+const renderNumberOfCards = () => {
   numberOfCardsPlayer1.innerHTML = player1.length;
   numberOfCardsPlayer2.innerHTML = player2.length;
 };
 
-let cardsDistribution = () => {
+const cardsDistribution = () => {
   for (i = 0; i < numberOfCards; i++) {
     //losowe id z talii
-    let randomKardIDplayer1 = Math.floor(Math.random() * pack.length);
+    const randomKardIDplayer1 = Math.floor(Math.random() * pack.length);
     player1.push(pack[randomKardIDplayer1]);
     pack.splice(randomKardIDplayer1, 1);
   }
 
   for (z = 0; z < numberOfCards; z++) {
     //losowe id z talii
-    let randomKardIDplayer2 = Math.floor(Math.random() * pack.length);
+    const randomKardIDplayer2 = Math.floor(Math.random() * pack.length);
     player2.push(pack[randomKardIDplayer2]);
     pack.splice(randomKardIDplayer2, 1);
   }
@@ -145,10 +149,10 @@ let whoWins = () => {
     }
     currentCardIndex = 0;
   } else {
-    let button = document.querySelector(".button");
+    const button = document.querySelector(".button");
     button.disabled = true;
     message.innerHTML = `
-            <div>Dogrywka!</div><div><button class="drawButton">Rozstrzygnij bitwę!</button></div>
+            <div>Draw!</div><div><button class="drawButton">Settle!</button></div>
             `;
     currentCardIndex = currentCardIndex + 2;
     document.querySelector(".drawButton").onclick = nextMoveDraw;
@@ -156,7 +160,7 @@ let whoWins = () => {
   renderNumberOfCards();
 };
 
-let nextMoveDraw = () => {
+const nextMoveDraw = () => {
   boardPlayer1SecondCard.innerHTML +=
     "<img class='backOfCard' src='images/back.png'>";
   boardPlayer2SecondCard.innerHTML +=
@@ -169,12 +173,12 @@ let nextMoveDraw = () => {
     "<img class='cardImage' src='images/" +
     player2[currentCardIndex].name +
     ".png'>";
-  let button = document.querySelector(".button");
+  const button = document.querySelector(".button");
   button.disabled = false;
   whoWins();
 };
 
-let nextMove = () => {
+const nextMove = () => {
   boardPlayer1FirstCard.innerHTML =
     "<img class='cardImage' src='images/" +
     player1[currentCardIndex].name +
@@ -183,7 +187,7 @@ let nextMove = () => {
     "<img class='cardImage' src='images/" +
     player2[currentCardIndex].name +
     ".png'>";
-  let button = document.querySelector(".button");
+  const button = document.querySelector(".button");
   button.disabled = false;
   whoWins();
 };
